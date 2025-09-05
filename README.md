@@ -10,7 +10,7 @@ Data is writen into the "Monopoly_Generated_Data.txt" file by "game_num,player_n
 Holds comma seperated integers for "game_num,player_num,turn_num,die1,die2,roll_total,space1,adv_to_space,board_laps". Is created or overwritten with each run of "Monopoly_Data_Generation.py".
 
 "Monopoly_Dashboard.xlsx"
-Imports "Monopoly_Generated_Data.txt" data to the "Monopoly_Generated_Data" sheet.
+"Monopoly_Generated_Data" sheet shows imported "Monopoly_Generated_Data.txt" data.
 "calc_sheet" assigns the names of spaces to their types and counts the number of times each appeared in the imported data. It also counts the min, max, total, and average board laps per player and the roll and die counts.
 "pivots" groups the times landed on each space by their space type and totals them.
 "dashboard" shows graphics for landing frequencies by space name and space type with a splicer to filter for desired space types. Additional graphics show the average roll total, the average die outcome, and the min, max, and avg board laps per player per game.
