@@ -1,13 +1,7 @@
 import random;
 
 #START: DATA COLLECTION PARAMETERS
-games = input("Number of Games: ")
-try: 
-    games = int(games)
-except:
-    print("Invalid: non-integer; Reverting to default of 100.")
-    games = 100
-players = input("Number of Players(2-8): ")
+players = input("Number of Players (2-8): ")
 try:
     players = int(players)
     if players > 8 or players < 2:
@@ -16,12 +10,24 @@ try:
 except:
     print("Invalid: non-integer; Reverting to default of 4.")
     players = 4
-turns = input("Turns per Player: ")
+turns = input("Turns per Player (1-200): ")
 try:
     turns = int(turns)
+    if turns < 1 or turns > 200:
+        print("Invalid: out of range; Reverting to default of 90.")
+        turns = 90
 except:
     print("Invalid: non-integer; Reverting to default of 90.")
     turns = 90
+games = input("Number of Games (1-1000): ")
+try: 
+    games = int(games)
+    if games < 1 or games > 1000:
+        print("Invalid: out of range; Reverting to default of 100.")
+        games = 100
+except:
+    print("Invalid: non-integer; Reverting to default of 100.")
+    games = 100
 #END: DATA COLLECTION PARAMETERS
 data_sheet = open("Monopoly_Generated_Data.txt", "w")
 data_sheet.write("game_num,player_num,turn_num,die1,die2,roll_total,space1,adv_to_space,board_laps\n")
@@ -245,8 +251,8 @@ while g<=games:      #num of games (10 defualt)
         comm_chest_cards.append(2)
 
     #to track progress of data generation
-    print(g)
+    print("Finished game", g)
     g+=1
 #END: DATA COLLECTION
-
+print("DATA COLLECTION COMPLETE. ENDING PROGRAM.")
 data_sheet.close()
