@@ -64,7 +64,7 @@ comm_chest_cards = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16]
 
 #START: DATA COLLECTION
 g=1
-while g<=games:      #num of games (10 defualt)
+while g<=games:      #num of games (100 defualt)
     #Shuffle chance and comm chest cards
     random.shuffle(chance_cards)
     random.shuffle(comm_chest_cards)
@@ -255,4 +255,5 @@ while g<=games:      #num of games (10 defualt)
     g+=1
 #END: DATA COLLECTION
 print("DATA COLLECTION COMPLETE. ENDING PROGRAM.")
+
 data_sheet.close()
